@@ -1,12 +1,16 @@
-import { Outlet } from 'react-router-dom';
-import styles from './App.module.css';
-import './App.font.css';
+import { Outlet } from "react-router-dom";
+import styles from "./App.module.css";
+import "./App.font.css";
+import Navigation from "./Navigation";
 
 function App() {
   return (
-    <div className={styles.body}>
-      <Outlet />
-    </div>
+    <>
+      <Navigation className={styles.nav} />
+      <div className={styles.body}>
+        <Outlet />
+      </div>
+    </>
   );
 }
 
