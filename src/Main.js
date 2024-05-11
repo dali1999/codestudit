@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import App from "./components/App";
 import HomePage from "./pages/HomePage";
 import MyFeedPage from "./pages/MyFeedPage";
+import NotLoggedInPage from "./pages/NotLoggedInPage";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ function Main() {
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
             <Route path="my-feed" element={<MyFeedPage />} />
+            <Route path="not-logged-in" element={<NotLoggedInPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

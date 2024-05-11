@@ -5,6 +5,7 @@ import ProfilePhoto from "./ProfilePhoto";
 import { QUERY_KEYS, USERNAMES } from "../values";
 import { LoginContext } from "../context/LoginContext";
 import styles from "./UserMenu.module.css";
+import anonymousUserIcon from "../assets/person.png";
 import { getUserInfo } from "../api";
 
 function UserMenu() {
@@ -19,7 +20,7 @@ function UserMenu() {
     staleTime: 60 * 1000 * 60,
     enabled: !!currentUsername,
   });
-  
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ function UserMenu() {
     navigate("/");
   };
 
-  const userPhoto = currentUserInfo && currentUserInfo.photo;
+  const userPhoto = currentUserInfo ? currentUserInfo.photo : anonymousUserIcon;
   const userName = currentUserInfo ? currentUserInfo.name : "로그인";
 
   return (
