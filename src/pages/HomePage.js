@@ -1,13 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import Container from "../components/Container";
 import PostList from "../components/PostList";
 import styles from "./HomePage.module.css";
-import { getPostsByUsername } from "../api";
+import { FEED_VARIANT } from "../values";
 
 function HomePage() {
   return (
     <Container className={styles.container}>
-      <PostList />
+      <PostList variant={FEED_VARIANT.HOME_FEED} showPostForm />
     </Container>
   );
 }
