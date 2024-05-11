@@ -1,7 +1,7 @@
 const BASE_URL = "https://learn.codeit.kr/api/codestudit";
 
-export async function getPosts() {
-  const response = await fetch(`${BASE_URL}/posts`);
+export async function getPosts(page = 0, limit = 10) {
+  const response = await fetch(`${BASE_URL}/posts?page=${page}&limit=${limit}`);
   return await response.json();
 }
 
